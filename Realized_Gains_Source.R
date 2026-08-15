@@ -5,30 +5,28 @@ if (!exists("portfolio_full")) {
 
 portfolio_realised <- tibble(
   ticker = c("PL","AAOI","CRCL","IREN","SVCO","TTMI","AXTI","IONQ","YSS","V500.AX",
-             "ANZ.NZ","VAS.AX","IXJ.AX","GE","ESE","QBTS","IONQ","TSM","AXTI"),
+             "ANZ.NZ","VAS.AX","IXJ.AX","GE","ESE","QBTS","IONQ","TSM","AXTI","SAP"),
   shares = c(0.328854,0.071638, 0.080729,0.113455,0.380119, 0.041414,0.137909,
              0.242995,0.11323318,0.097511,0.218176,0.090456, 0.036901, 0.021907,0.019189,
-             0.40701328,0.13990793,0.00945007,0.03105551),
-  total_cost = c(12,8,8,5,3.06,5.1,6.9,7,4.50,5.00,10.00,10.00,5.00,7.00,6.01,9.00,7.00,3.90,3.50),
+             0.40701328,0.13990793,0.00945007,0.03105551, 0.04033003),
+  total_cost = c(12,8,8,5,3.06,5.1,6.9,7,4.50,5.00,10.00,10.00,5.00,7.00,6.01,9.00,7.00,3.90,3.50, 7.07),
   sector = c("Industrial","Technology","Financial Serivces","Finacial services",
              "Technology","Technology","Technology","Technology","Industrial","ETF",
              "Financials","ETF","ETF","Industrials","Industrials","Technology","Technology","Technology",
-             "Technology"),
+             "Technology","Technology"),
   industry = c("Aerospace & defence", "Communication equipment","Capital markets",
                "Capital markets","Software - application","Electronic components",
                "Semiconductor equipment & materials","Computer hardware","Aerospace & defence",
                "Intl Equities","Banking","AU Equities","Healthcare","Aerospace & Defense",
                "Defense Electronics","Quantum Computing","Quantum Computing","Semiconductors",
-               "Semiconductors"),
+               "Semiconductors","Enterprise Software"),
   currency = c("USD","USD","USD","USD","USD","USD","USD","USD","USD","AUD","NZD",
-               "AUD","AUD","USD","USD","USD","USD","USD","USD"),
+               "AUD","AUD","USD","USD","USD","USD","USD","USD", "USD"),
   sold = c(10.795,10.304,9.120,6.330,4.329,4.730,8.666,10.419,3.79,5.12,9.21,9.65,
-           4.71,6.22,5.59,10.83,8.17,4.16,1.93),
+           4.71,6.22,5.59,10.83,8.17,4.16,1.93,7.67),
   return = sold - total_cost,
   pct_return = (return / total_cost) * 100
 )
-
-
 
 # Summary grouped by currency — avoids mixing USD / AUD / NZD into a single misleading total
 portfolio_realised_summary <- portfolio_realised %>%

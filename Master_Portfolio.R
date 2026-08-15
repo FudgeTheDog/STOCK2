@@ -30,7 +30,7 @@ source(file.path(dirname(rstudioapi::getSourceEditorContext()$path), "DCA_BearBu
 View(latest_prices)
 View(portfolio_data)
 # Ticker_Graph ------------------------------------------------------------
-plot_ticker("PICK")
+plot_ticker("FHLC")
  
 # Connor_Sharesies --------------------------------------------------------
 View(portfolio_full)
